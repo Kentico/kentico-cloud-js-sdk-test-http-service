@@ -60,13 +60,13 @@ describe('delivery client is compatible with', () => {
       throwCloudError: false
     })
 
-    const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+    const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
       fakeResponseConfig
     )
     const deliveryClientConfig = {
       projectId: 'dummyProject',
       typeResolvers: [],
-      httpService: advancedTestHttpService
+      httpService: fakeHttpService
     }
     const client = new DeliveryClient(deliveryClientConfig)
     const itemsResult = await client.items().getPromise()

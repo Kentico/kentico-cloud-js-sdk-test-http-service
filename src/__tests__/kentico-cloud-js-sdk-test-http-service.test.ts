@@ -18,20 +18,18 @@ describe('adventd-test-http.service.test', () => {
 
   describe('constructor', () => {
     it('instanciate function withour error', async () => {
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
-      expect(advancedTestHttpService).toBeTruthy()
+      expect(fakeHttpService).toBeTruthy()
     })
   })
 
   describe('get', () => {
     it('error when config is empty', async () => {
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
-        emptyConfig
-      )
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(emptyConfig)
 
-      advancedTestHttpService
+      fakeHttpService
         .get({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
@@ -50,11 +48,11 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for error', () => {
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
         universalErrorConfig
       )
 
-      advancedTestHttpService
+      fakeHttpService
         .get({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
@@ -73,11 +71,11 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for fake response', async () => {
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
 
-      const result = await advancedTestHttpService
+      const result = await fakeHttpService
         .get({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
@@ -108,11 +106,11 @@ describe('adventd-test-http.service.test', () => {
         }
       )
 
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
         complexFakeResponseConfig
       )
 
-      const typesResult = await advancedTestHttpService
+      const typesResult = await fakeHttpService
         .get({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/types',
@@ -123,7 +121,7 @@ describe('adventd-test-http.service.test', () => {
       expect(typesResult).toHaveProperty('data')
       expect(typesResult.data).toEqual(typesResponse)
 
-      const itemsResult = await advancedTestHttpService
+      const itemsResult = await fakeHttpService
         .get({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
@@ -138,12 +136,12 @@ describe('adventd-test-http.service.test', () => {
 
   describe('post', () => {
     it('calls get method implementation', async () => {
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
-      const getSpy = jest.spyOn(advancedTestHttpService, 'get')
+      const getSpy = jest.spyOn(fakeHttpService, 'get')
 
-      await advancedTestHttpService
+      await fakeHttpService
         .post({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
@@ -158,12 +156,12 @@ describe('adventd-test-http.service.test', () => {
 
   describe('put', () => {
     it('calls get method implementation', async () => {
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
-      const getSpy = jest.spyOn(advancedTestHttpService, 'get')
+      const getSpy = jest.spyOn(fakeHttpService, 'get')
 
-      await advancedTestHttpService
+      await fakeHttpService
         .put({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
@@ -178,12 +176,12 @@ describe('adventd-test-http.service.test', () => {
 
   describe('delete', () => {
     it('calls get method implementation', async () => {
-      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
-      const getSpy = jest.spyOn(advancedTestHttpService, 'get')
+      const getSpy = jest.spyOn(fakeHttpService, 'get')
 
-      await advancedTestHttpService
+      await fakeHttpService
         .delete({
           url:
             'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
