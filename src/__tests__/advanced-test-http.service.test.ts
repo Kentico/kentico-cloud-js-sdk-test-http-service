@@ -154,34 +154,42 @@ describe('adventd-test-http.service.test', () => {
     })
   })
 
-  // describe('put', () => {
-  //   it('calls get method implementation', async () => {
-  //     const advancedTestHttpService = new AdvancedTestHttpService(universalFakeResponseConfig);
-  //     const getMock = jest.fn();
-  //     advancedTestHttpService.get = getMock;
+  describe('put', () => {
+    it('calls get method implementation', async () => {
+      const advancedTestHttpService = new AdvancedTestHttpService(
+        universalFakeResponseConfig
+      )
+      const getSpy = jest.spyOn(advancedTestHttpService, 'get')
 
-  //     await advancedTestHttpService.put({
-  //       url: 'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
-  //       body: {},
-  //       mapError: (error) => error
-  //     });
+      await advancedTestHttpService
+        .put({
+          url:
+            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+          body: {},
+          mapError: error => error
+        })
+        .toPromise()
 
-  //     expect(getMock).toHaveBeenCalled();
-  //   })
-  // });
+      expect(getSpy).toHaveBeenCalled()
+    })
+  })
 
-  // describe('delete', () => {
-  //   it('calls get method implementation', async () => {
-  //     const advancedTestHttpService = new AdvancedTestHttpService(universalFakeResponseConfig);
-  //     const getMock = jest.fn();
-  //     advancedTestHttpService.get = getMock;
+  describe('delete', () => {
+    it('calls get method implementation', async () => {
+      const advancedTestHttpService = new AdvancedTestHttpService(
+        universalFakeResponseConfig
+      )
+      const getSpy = jest.spyOn(advancedTestHttpService, 'get')
 
-  //     await advancedTestHttpService.delete({
-  //       url: 'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
-  //       mapError: (error) => error
-  //     });
+      await advancedTestHttpService
+        .delete({
+          url:
+            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+          mapError: error => error
+        })
+        .toPromise()
 
-  //     expect(getMock).toHaveBeenCalled();
-  //   })
-  // });
+      expect(getSpy).toHaveBeenCalled()
+    })
+  })
 })
