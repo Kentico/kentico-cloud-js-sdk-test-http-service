@@ -1,4 +1,1 @@
-// Source goes here.
-export function myModule() {
-  // Do your thing
-}
+export * from './adventd-test-http.service'
