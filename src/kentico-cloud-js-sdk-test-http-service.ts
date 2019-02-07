@@ -17,7 +17,7 @@ export type FakeResponseConfig = {
   errorJson?: any
 }
 
-export class AdvancedTestHttpService implements IHttpService {
+export class KenticoCloudJsSdkTestHttpService implements IHttpService {
   constructor(public config: Map<RegExp, FakeResponseConfig>) {
     Object.assign(this, config)
   }

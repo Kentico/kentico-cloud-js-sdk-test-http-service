@@ -1,6 +1,6 @@
 import { DeliveryClient } from 'kentico-cloud-delivery'
 
-import { AdvancedTestHttpService, FakeResponseConfig } from '../index'
+import { KenticoCloudJsSdkTestHttpService, FakeResponseConfig } from '../index'
 
 describe('delivery client is compatible with', () => {
   it('providing the advanced test http service', async () => {
@@ -60,7 +60,7 @@ describe('delivery client is compatible with', () => {
       throwCloudError: false
     })
 
-    const advancedTestHttpService = new AdvancedTestHttpService(
+    const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
       fakeResponseConfig
     )
     const deliveryClientConfig = {

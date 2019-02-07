@@ -1,4 +1,4 @@
-import { AdvancedTestHttpService, FakeResponseConfig } from '../index'
+import { KenticoCloudJsSdkTestHttpService, FakeResponseConfig } from '../index'
 
 describe('adventd-test-http.service.test', () => {
   const emptyConfig = new Map<RegExp, FakeResponseConfig>()
@@ -18,7 +18,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('constructor', () => {
     it('instanciate function withour error', async () => {
-      const advancedTestHttpService = new AdvancedTestHttpService(
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       expect(advancedTestHttpService).toBeTruthy()
@@ -27,7 +27,9 @@ describe('adventd-test-http.service.test', () => {
 
   describe('get', () => {
     it('error when config is empty', async () => {
-      const advancedTestHttpService = new AdvancedTestHttpService(emptyConfig)
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
+        emptyConfig
+      )
 
       advancedTestHttpService
         .get({
@@ -48,7 +50,7 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for error', () => {
-      const advancedTestHttpService = new AdvancedTestHttpService(
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
         universalErrorConfig
       )
 
@@ -71,7 +73,7 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for fake response', async () => {
-      const advancedTestHttpService = new AdvancedTestHttpService(
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
 
@@ -106,7 +108,7 @@ describe('adventd-test-http.service.test', () => {
         }
       )
 
-      const advancedTestHttpService = new AdvancedTestHttpService(
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
         complexFakeResponseConfig
       )
 
@@ -136,7 +138,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('post', () => {
     it('calls get method implementation', async () => {
-      const advancedTestHttpService = new AdvancedTestHttpService(
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(advancedTestHttpService, 'get')
@@ -156,7 +158,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('put', () => {
     it('calls get method implementation', async () => {
-      const advancedTestHttpService = new AdvancedTestHttpService(
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(advancedTestHttpService, 'get')
@@ -176,7 +178,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('delete', () => {
     it('calls get method implementation', async () => {
-      const advancedTestHttpService = new AdvancedTestHttpService(
+      const advancedTestHttpService = new KenticoCloudJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(advancedTestHttpService, 'get')

@@ -4,12 +4,12 @@
 # advanced-test-http-service
 
 [![npm](https://img.shields.io/npm/v/advanced-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/advanced-test-http-service)
-[![dependency Status](https://img.shields.io/david/Simply007/advanced-test-http-service.svg?maxAge=1000)](https://david-dm.org/Simply007/advanced-test-http-service)
-[![devDependency Status](https://img.shields.io/david/dev/Simply007/advanced-test-http-service.svg?maxAge=1000)](https://david-dm.org/Simply007/advanced-test-http-service)
-[![Build Status](https://img.shields.io/travis/Simply007/advanced-test-http-service.svg?maxAge=1000)](https://travis-ci.org/Simply007/advanced-test-http-service)
-[![Coveralls](https://img.shields.io/coveralls/Simply007/advanced-test-http-service.svg?maxAge=1000)](https://coveralls.io/github/Simply007/advanced-test-http-service)
+[![dependency Status](https://img.shields.io/david/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://david-dm.org/Kentico/kentico-cloud-js-sdk-test-http-service)
+[![devDependency Status](https://img.shields.io/david/dev/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://david-dm.org/Kentico/kentico-cloud-js-sdk-test-http-service)
+[![Build Status](https://img.shields.io/travis/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://travis-ci.org/Kentico/kentico-cloud-js-sdk-test-http-service)
+[![Coveralls](https://img.shields.io/coveralls/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://coveralls.io/github/Kentico/kentico-cloud-js-sdk-test-http-service)
 [![npm](https://img.shields.io/npm/dt/advanced-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/advanced-test-http-service)
-[![npm](https://img.shields.io/npm/l/advanced-test-http-service.svg?maxAge=1000)](https://github.com/Simply007/advanced-test-http-service/blob/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/l/advanced-test-http-service.svg?maxAge=1000)](https://github.com/Kentico/kentico-cloud-js-sdk-test-http-service/blob/master/LICENSE.md)
 
 # Install
 
