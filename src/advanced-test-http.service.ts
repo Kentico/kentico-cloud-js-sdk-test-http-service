@@ -11,28 +11,39 @@ import {
   IHttpQueryOptions
 } from 'kentico-cloud-core'
 
-export class AdvancedTestHttpService implements IHttpService {
-  public throwCloudError: boolean = false
-  public fakeResponseJson: any = undefined
-  public errorJson: any = undefined
+export type FakeResponseConfig = {
+  fakeResponseJson?: any
+  throwCloudError?: boolean
+  errorJson?: any
+}
 
-  constructor(config: {
-    fakeResponseJson?: any
-    throwCloudError?: boolean
-    errorJson?: any
-  }) {
+export class AdvancedTestHttpService implements IHttpService {
+  constructor(public config: Map<RegExp, FakeResponseConfig>) {
     Object.assign(this, config)
   }
 
   get<TError extends any, TRawData extends any>(
     call: IHttpGetQueryCall<TError>,
-    options?: IHttpQueryOptions
+    _options?: IHttpQueryOptions
   ): Observable<IBaseResponse<TRawData>> {
-    // throw cloud error
-    if (this.throwCloudError) {
+    const match = Array.from(this.config.entries()).find(item =>
+      item[0].test(call.url)
+    )
+
+    if (!match) {
+      return throwError({
+        originalError: `URL ${call.url} does not match to the configuration.`,
+        mappedError: call.mapError(
+          `URL ${call.url} does not match to the configuration.`
+        )
+      } as IBaseResponseError<TError>)
+    }
+
+    const responseConfig = match[1]
+    if (responseConfig.throwCloudError) {
       const fakeError = {
         response: {
-          data: this.errorJson
+          data: responseConfig.errorJson
         }
       }
       return throwError({
@@ -43,7 +54,7 @@ export class AdvancedTestHttpService implements IHttpService {
 
     // return fake response
     return of({
-      data: this.fakeResponseJson,
+      data: responseConfig.fakeResponseJson,
       response: undefined
     } as IBaseResponse<TRawData>)
   }
@@ -52,71 +63,20 @@ export class AdvancedTestHttpService implements IHttpService {
     call: IHttpPostQueryCall<TError>,
     options?: IHttpQueryOptions
   ): Observable<IBaseResponse<TRawData>> {
-    // throw cloud error
-    if (this.throwCloudError) {
-      const fakeError = {
-        response: {
-          data: this.errorJson
-        }
-      }
-      return throwError({
-        originalError: fakeError,
-        mappedError: call.mapError(fakeError)
-      } as IBaseResponseError<TError>)
-    }
-
-    // return fake response
-    return of({
-      data: this.fakeResponseJson,
-      response: undefined
-    } as IBaseResponse<TRawData>)
+    return this.get(call, options)
   }
 
   put<TError extends any, TRawData extends any>(
     call: IHttpPutQueryCall<TError>,
     options?: IHttpQueryOptions
   ): Observable<IBaseResponse<TRawData>> {
-    // throw cloud error
-    if (this.throwCloudError) {
-      const fakeError = {
-        response: {
-          data: this.errorJson
-        }
-      }
-      return throwError({
-        originalError: fakeError,
-        mappedError: call.mapError(fakeError)
-      } as IBaseResponseError<TError>)
-    }
-
-    // return fake response
-    return of({
-      data: this.fakeResponseJson,
-      response: undefined
-    } as IBaseResponse<TRawData>)
+    return this.get(call, options)
   }
 
   delete<TError extends any, TRawData extends any>(
     call: IHttpDeleteQueryCall<TError>,
     options?: IHttpQueryOptions
   ): Observable<IBaseResponse<TRawData>> {
-    // throw cloud error
-    if (this.throwCloudError) {
-      const fakeError = {
-        response: {
-          data: this.errorJson
-        }
-      }
-      return throwError({
-        originalError: fakeError,
-        mappedError: call.mapError(fakeError)
-      } as IBaseResponseError<TError>)
-    }
-
-    // return fake response
-    return of({
-      data: this.fakeResponseJson,
-      response: undefined
-    } as IBaseResponse<TRawData>)
+    return this.get(call, options)
   }
 }
