@@ -31,4 +31,8 @@ Todo...
 
 # Author
 
-Jeff Hansen — [@Simply007](https://twitter.com/Simply007)
+Ondřej Chrastina — [@Simply007](https://twitter.com/Simply007)
+
+## Thanks
+
+- Author of the [typescript module boilerplate](https://github.com/jeffijoe/ts-module-boilerplate) Jeff Hansen — [@Jeffijoe](https://twitter.com/Jeffijoe)
