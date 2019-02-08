@@ -6,17 +6,24 @@ notifications:
   email: false
 # Add additional versions here as appropriate.
 node_js:
-  - "stable"
-  - "8"
-  - "7"
-  - "6"
+- "stable"
 # Lint errors should trigger a failure.
 before_script:
-  - npm run lint
-  - npm run build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- ./cc-test-reporter before-build
+- npm run lint
+- npm run build
 # Runs the coverage script (which runs the tests)
 script: npm run cover
-# Code coverage
-after_success:
-  - npm run coveralls
+after_script:
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+deploy:
+ provider: npm
+ email: $NPM_EMAIL
+ api_key: $NPM_API_KEY
+ skip_cleanup: true
+ tag: beta # uncomment for beta release
+ on:
+   tags: true
 
