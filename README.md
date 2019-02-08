@@ -75,3 +75,5 @@ Ondřej Chrastina — [@Simply007](https://twitter.com/Simply007)
 ## Thanks
 
 - Author of the [typescript module boilerplate](https://github.com/jeffijoe/ts-module-boilerplate) Jeff Hansen — [@Jeffijoe](https://twitter.com/Jeffijoe)
+
+![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kentico-cloud-js-sdk-test-http-service?pixel)
