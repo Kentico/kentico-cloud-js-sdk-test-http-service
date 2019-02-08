@@ -9,9 +9,9 @@
 [![npm](https://img.shields.io/npm/l/advanced-test-http-service.svg?maxAge=1000)](https://github.com/Kentico/kentico-cloud-js-sdk-test-http-service/blob/master/LICENSE.md)
 
 
-This is an npm package called `kentico-cloud-js-sdk-test-http-service`.
+This is source for npm package called `kentico-cloud-js-sdk-test-http-service`.
 
-It could be used as a fake Http Service when testing [Kentico Cloud Delivery SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery).
+This package is meant to be used as a fake Http Service when testing [Kentico Cloud Delivery SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery). It is basically an implementation of [IHttpService](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/core/lib/http/ihttp.service.ts) that could be used when [configuring Delivery client](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/delivery/DOCS.md#client-configuration).
 
 # Install
 
@@ -29,7 +29,7 @@ yarn add kentico-cloud-js-sdk-test-http-service
 
 # Usage
 
-This it the example of the usage. Object `fakeResponseConfig` could contain multiple entries - entries are chosen by matching request url against the regular expression pattern provided as a key.
+This it the example of the usage. Object `fakeResponseConfig` could contain multiple entries - entry is chosen by matching request url against the regular expression pattern provided as a key.
 
 > Full example is in [delivery client tests](/src/__tests__/delivery-client.test.ts). 
 
@@ -40,7 +40,7 @@ fakeResponseConfig.set(
   // QUERYING THE DATA AGAINST THE URL
   /https:\/\/deliver.kenticocloud.com\/.*\/items/,  
   {
-    // HERE YOU PROVIDE YOUR FAKE RESPONSE FOR ThIS PATTERN
+    // HERE YOU PROVIDE YOUR FAKE RESPONSE FOR THIS PATTERN
     fakeResponseJson: { 
       items: [
         {
@@ -56,9 +56,8 @@ fakeResponseConfig.set(
     throwCloudError: false
   });
 
-const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
-      fakeResponseConfig
-    );
+const fakeHttpService = 
+ new KenticoCloudJsSdkTestHttpService(fakeResponseConfig);
 
 const deliveryClientConfig = {
       projectId: 'dummyProject',
