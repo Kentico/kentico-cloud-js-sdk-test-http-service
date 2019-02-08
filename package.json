@@ -1,6 +1,6 @@
 {
   "name": "kentico-cloud-js-sdk-test-http-service",
-  "version": "0.0.1-beta1",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
