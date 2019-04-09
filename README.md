@@ -7,11 +7,8 @@
 
 [![Build Status](https://img.shields.io/travis/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://travis-ci.org/Kentico/kentico-cloud-js-sdk-test-http-service)
 [![dependency Status](https://img.shields.io/david/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://david-dm.org/Kentico/kentico-cloud-js-sdk-test-http-service)
-[![devDependency Status](https://img.shields.io/david/dev/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://david-dm.org/Kentico/kentico-cloud-js-sdk-test-http-service)
-
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kentico-cloud-js-sdk-test-http-service/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/test_coverage)](https://codeclimate.com/github/Kentico/kentico-cloud-js-sdk-test-http-service/test_coverage)
 
 
 This is source for npm package called `kentico-cloud-js-sdk-test-http-service`.
