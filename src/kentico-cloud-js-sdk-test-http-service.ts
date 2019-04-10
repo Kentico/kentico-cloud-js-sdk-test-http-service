@@ -22,6 +22,17 @@ export class KenticoCloudJsSdkTestHttpService implements IHttpService {
     Object.assign(this, config)
   }
 
+  retryPromise<T>(
+    _promise: Promise<T>,
+    _options: {
+      maxRetryAttempts: number
+      useRetryForResponseCodes: number[]
+      delay: number
+    }
+  ): Promise<T> {
+    throw new Error('Not implemented')
+  }
+
   get<TError extends any, TRawData extends any>(
     call: IHttpGetQueryCall<TError>,
     _options?: IHttpQueryOptions
