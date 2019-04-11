@@ -10,6 +10,7 @@ import {
   IHttpPutQueryCall,
   IHttpQueryOptions
 } from 'kentico-cloud-core'
+import { promises } from 'fs'
 
 export type FakeResponseConfig = {
   fakeResponseJson?: any
@@ -20,6 +21,17 @@ export type FakeResponseConfig = {
 export class KenticoCloudJsSdkTestHttpService implements IHttpService {
   constructor(public config: Map<RegExp, FakeResponseConfig>) {
     Object.assign(this, config)
+  }
+
+  retryPromise<T>(
+    promise: Promise<T>,
+    _options: {
+      maxRetryAttempts: number
+      useRetryForResponseCodes: number[]
+      delay: number
+    }
+  ): Promise<T> {
+    return promise
   }
 
   get<TError extends any, TRawData extends any>(
