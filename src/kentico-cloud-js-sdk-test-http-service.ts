@@ -10,6 +10,7 @@ import {
   IHttpPutQueryCall,
   IHttpQueryOptions
 } from 'kentico-cloud-core'
+import { promises } from 'fs'
 
 export type FakeResponseConfig = {
   fakeResponseJson?: any
@@ -23,14 +24,14 @@ export class KenticoCloudJsSdkTestHttpService implements IHttpService {
   }
 
   retryPromise<T>(
-    _promise: Promise<T>,
+    promise: Promise<T>,
     _options: {
       maxRetryAttempts: number
       useRetryForResponseCodes: number[]
       delay: number
     }
   ): Promise<T> {
-    throw new Error('Not implemented')
+    return promise
   }
 
   get<TError extends any, TRawData extends any>(
