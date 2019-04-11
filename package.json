@@ -1,6 +1,6 @@
 {
   "name": "kentico-cloud-js-sdk-test-http-service",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -64,7 +64,6 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "mapCoverage": true,
     "testRegex": "(/__tests__/.*\\.(test|spec))\\.(ts|tsx|js)$",
     "collectCoverageFrom": [
       "src/**/*.ts"
