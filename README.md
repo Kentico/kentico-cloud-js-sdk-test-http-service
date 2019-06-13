@@ -1,4 +1,4 @@
-# Kentico Cloud JS SDK Test Http Service
+# JS SDK Test Http Service
 
 [![npm](https://img.shields.io/npm/v/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/kentico-cloud-js-sdk-test-http-service)
 [![npm](https://img.shields.io/npm/dt/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/kentico-cloud-js-sdk-test-http-service)
