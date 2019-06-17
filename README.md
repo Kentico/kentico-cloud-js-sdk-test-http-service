@@ -1,4 +1,4 @@
-# JS SDK Test Http Service
+# Kentico Cloud JS SDK Test HTTP Service
 
 [![npm](https://img.shields.io/npm/v/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/kentico-cloud-js-sdk-test-http-service)
 [![npm](https://img.shields.io/npm/dt/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/kentico-cloud-js-sdk-test-http-service)
@@ -11,9 +11,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kentico-cloud-js-sdk-test-http-service/maintainability)
 
 
-This is source for npm package called `kentico-cloud-js-sdk-test-http-service`.
+This is a source for an npm package called `kentico-cloud-js-sdk-test-http-service`.
 
-This package is meant to be used as a fake Http Service when testing [Kentico Cloud Delivery SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery). It is basically an implementation of [IHttpService](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/core/lib/http/ihttp.service.ts) that could be used when [configuring Delivery client](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/delivery/DOCS.md#client-configuration).
+This package is meant to be used as a fake HTTP Service when testing the [Kentico Cloud Delivery SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery). It is basically an implementation of [IHttpService](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/core/lib/http/ihttp.service.ts) that could be used when [configuring the Delivery client](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/delivery/DOCS.md#client-configuration).
 
 # Install
 
@@ -31,9 +31,9 @@ yarn add kentico-cloud-js-sdk-test-http-service
 
 # Usage
 
-This it the example of the usage. Object `fakeResponseConfig` could contain multiple entries - entry is chosen by matching request url against the regular expression pattern provided as a key.
+This it the example of the usage. The object `fakeResponseConfig` could contain multiple entries. An entry is chosen by matching the request url against the regular expression pattern provided as a key.
 
-> Full example is in [delivery client tests](/src/__tests__/delivery-client.test.ts). 
+> The full example is in [delivery client tests](/src/__tests__/delivery-client.test.ts). 
 
 ```typescript
 const fakeResponseConfig = new Map<RegExp, FakeResponseConfig>()
