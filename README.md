@@ -11,7 +11,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kentico-cloud-js-sdk-test-http-service/maintainability)
 
 
-This is a source for the npm package called `kentico-cloud-js-sdk-test-http-service`.
+This is the source for the npm package called `kentico-cloud-js-sdk-test-http-service`.
 
 This package is meant to be used as a fake HTTP Service when testing the [Kentico Cloud Delivery SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery). It is basically an implementation of [IHttpService](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/core/lib/http/ihttp.service.ts) that could be used when [configuring the Delivery client](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/delivery/DOCS.md#client-configuration).
 
