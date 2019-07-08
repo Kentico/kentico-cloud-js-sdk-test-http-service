@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/l/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](kentico-cloud-js-sdk-test-http-service)
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
 
-[![Build Status](https://img.shields.io/travis/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://travis-ci.org/Kentico/kentico-cloud-js-sdk-test-http-service)
+[![Build Status](https://img.shields.io/travis/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://travis-ci.com/Kentico/kentico-cloud-js-sdk-test-http-service)
 [![dependency Status](https://img.shields.io/david/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://david-dm.org/Kentico/kentico-cloud-js-sdk-test-http-service)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kentico-cloud-js-sdk-test-http-service/maintainability)
