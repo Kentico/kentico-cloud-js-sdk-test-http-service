@@ -9,7 +9,7 @@ import {
   IHttpPostQueryCall,
   IHttpPutQueryCall,
   IHttpQueryOptions
-} from 'kentico-cloud-core'
+} from '@kentico/kontent-core'
 import { promises } from 'fs'
 
 export type FakeResponseConfig = {
@@ -18,7 +18,7 @@ export type FakeResponseConfig = {
   errorJson?: any
 }
 
-export class KenticoCloudJsSdkTestHttpService implements IHttpService {
+export class KontentJsSdkTestHttpService implements IHttpService {
   constructor(public config: Map<RegExp, FakeResponseConfig>) {
     Object.assign(this, config)
   }

@@ -1,4 +1,4 @@
-import { KenticoCloudJsSdkTestHttpService, FakeResponseConfig } from '../index'
+import { KontentJsSdkTestHttpService, FakeResponseConfig } from '../index'
 
 describe('adventd-test-http.service.test', () => {
   const emptyConfig = new Map<RegExp, FakeResponseConfig>()
@@ -18,7 +18,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('constructor', () => {
     it('instanciate function withour error', async () => {
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KontentJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       expect(fakeHttpService).toBeTruthy()
@@ -27,12 +27,12 @@ describe('adventd-test-http.service.test', () => {
 
   describe('get', () => {
     it('error when config is empty', async () => {
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(emptyConfig)
+      const fakeHttpService = new KontentJsSdkTestHttpService(emptyConfig)
 
       fakeHttpService
         .get({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           mapError: error => error
         })
         .subscribe({
@@ -48,14 +48,14 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for error', () => {
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KontentJsSdkTestHttpService(
         universalErrorConfig
       )
 
       fakeHttpService
         .get({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           mapError: error => error
         })
         .subscribe({
@@ -71,14 +71,14 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for fake response', async () => {
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KontentJsSdkTestHttpService(
         universalFakeResponseConfig
       )
 
       const result = await fakeHttpService
         .get({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           mapError: error => error
         })
         .toPromise()
@@ -92,28 +92,22 @@ describe('adventd-test-http.service.test', () => {
       const typesResponse = 'types response'
       const complexFakeResponseConfig = new Map<RegExp, FakeResponseConfig>()
 
-      complexFakeResponseConfig.set(
-        /https:\/\/deliver.kenticocloud.com\/.*\/items/,
-        {
-          fakeResponseJson: itemResponse
-        }
-      )
+      complexFakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/items/, {
+        fakeResponseJson: itemResponse
+      })
 
-      complexFakeResponseConfig.set(
-        /https:\/\/deliver.kenticocloud.com\/.*\/types/,
-        {
-          fakeResponseJson: typesResponse
-        }
-      )
+      complexFakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/types/, {
+        fakeResponseJson: typesResponse
+      })
 
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KontentJsSdkTestHttpService(
         complexFakeResponseConfig
       )
 
       const typesResult = await fakeHttpService
         .get({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/types',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/types',
           mapError: error => error
         })
         .toPromise()
@@ -124,7 +118,7 @@ describe('adventd-test-http.service.test', () => {
       const itemsResult = await fakeHttpService
         .get({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           mapError: error => error
         })
         .toPromise()
@@ -136,7 +130,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('post', () => {
     it('calls get method implementation', async () => {
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KontentJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(fakeHttpService, 'get')
@@ -144,7 +138,7 @@ describe('adventd-test-http.service.test', () => {
       await fakeHttpService
         .post({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           body: {},
           mapError: error => error
         })
@@ -156,7 +150,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('put', () => {
     it('calls get method implementation', async () => {
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KontentJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(fakeHttpService, 'get')
@@ -164,7 +158,7 @@ describe('adventd-test-http.service.test', () => {
       await fakeHttpService
         .put({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           body: {},
           mapError: error => error
         })
@@ -176,7 +170,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('delete', () => {
     it('calls get method implementation', async () => {
-      const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
+      const fakeHttpService = new KontentJsSdkTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(fakeHttpService, 'get')
@@ -184,7 +178,7 @@ describe('adventd-test-http.service.test', () => {
       await fakeHttpService
         .delete({
           url:
-            'https://deliver.kenticocloud.com/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           mapError: error => error
         })
         .toPromise()

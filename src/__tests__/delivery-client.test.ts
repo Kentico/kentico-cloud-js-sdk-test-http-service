@@ -1,6 +1,6 @@
-import { DeliveryClient } from 'kentico-cloud-delivery'
+import { DeliveryClient } from '@kentico/kontent-delivery'
 
-import { KenticoCloudJsSdkTestHttpService, FakeResponseConfig } from '../index'
+import { KontentJsSdkTestHttpService, FakeResponseConfig } from '../index'
 
 describe('delivery client is compatible with', () => {
   it('providing the advanced test http service', async () => {
@@ -38,7 +38,7 @@ describe('delivery client is compatible with', () => {
       }
     }
 
-    fakeResponseConfig.set(/https:\/\/deliver.kenticocloud.com\/.*\/items/, {
+    fakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/items/, {
       fakeResponseJson: {
         items: [fakeItem],
         pagination: {
@@ -49,7 +49,7 @@ describe('delivery client is compatible with', () => {
       throwCloudError: false
     })
 
-    fakeResponseConfig.set(/https:\/\/deliver.kenticocloud.com\/.*\/types/, {
+    fakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/types/, {
       fakeResponseJson: {
         types: [fakeType],
         pagination: {
@@ -60,9 +60,7 @@ describe('delivery client is compatible with', () => {
       throwCloudError: false
     })
 
-    const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
-      fakeResponseConfig
-    )
+    const fakeHttpService = new KontentJsSdkTestHttpService(fakeResponseConfig)
     const deliveryClientConfig = {
       projectId: 'dummyProject',
       typeResolvers: [],
