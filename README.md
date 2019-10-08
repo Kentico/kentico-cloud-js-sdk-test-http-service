@@ -40,7 +40,7 @@ const fakeResponseConfig = new Map<RegExp, FakeResponseConfig>()
 fakeResponseConfig.set(
   // THIS IS A PATTERN THAT WOULD BE USED FOR MATCHING WHEN 
   // QUERYING THE DATA AGAINST THE URL
-  /https:\/\/deliver.kenticocloud.com\/.*\/items/,  
+  /https:\/\/deliver.kontent.ai\/.*\/items/,  
   {
     // HERE YOU PROVIDE YOUR FAKE RESPONSE FOR THIS PATTERN
     fakeResponseJson: { 
@@ -59,7 +59,7 @@ fakeResponseConfig.set(
   });
 
 const fakeHttpService = 
- new KenticoCloudJsSdkTestHttpService(fakeResponseConfig);
+ new KontentJsSdkTestHttpService(fakeResponseConfig);
 
 const deliveryClientConfig = {
       projectId: 'dummyProject',
