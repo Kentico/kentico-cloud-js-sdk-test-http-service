@@ -1,5 +1,5 @@
 {
-  "name": "@kentico/kontent-test-http-service-js-sdk",
+  "name": "@kentico/kontent-test-http-service-js",
   "version": "2.0.0-beta1",
   "description": "",
   "main": "lib/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kentico/kontent-test-http-service-js-sdk.git"
+    "url": "https://github.com/Kentico/kontent-test-http-service-js.git"
   },
   "files": [
     "lib",
@@ -31,9 +31,9 @@
   "author": "Ondřej Chrastina <chrastina.ondra@gmail.com> (https://github.com/Simply007)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kentico/kontent-test-http-service-js-sdk/issues"
+    "url": "https://github.com/Kentico/kontent-test-http-service-js/issues"
   },
-  "homepage": "https://github.com/Kentico/kontent-test-http-service-js-sdk#readme",
+  "homepage": "https://github.com/Kentico/kontent-test-http-service-js#readme",
   "dependencies": {
     "@kentico/kontent-core": "^2.0.0",
     "tslib": "^1.9.3"

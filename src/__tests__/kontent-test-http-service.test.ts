@@ -1,4 +1,4 @@
-import { KontentJsSdkTestHttpService, FakeResponseConfig } from '../index'
+import { KontentTestHttpService, FakeResponseConfig } from '../index'
 
 describe('adventd-test-http.service.test', () => {
   const emptyConfig = new Map<RegExp, FakeResponseConfig>()
@@ -18,7 +18,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('constructor', () => {
     it('instanciate function withour error', async () => {
-      const fakeHttpService = new KontentJsSdkTestHttpService(
+      const fakeHttpService = new KontentTestHttpService(
         universalFakeResponseConfig
       )
       expect(fakeHttpService).toBeTruthy()
@@ -27,7 +27,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('get', () => {
     it('error when config is empty', async () => {
-      const fakeHttpService = new KontentJsSdkTestHttpService(emptyConfig)
+      const fakeHttpService = new KontentTestHttpService(emptyConfig)
 
       fakeHttpService
         .get({
@@ -48,9 +48,7 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for error', () => {
-      const fakeHttpService = new KontentJsSdkTestHttpService(
-        universalErrorConfig
-      )
+      const fakeHttpService = new KontentTestHttpService(universalErrorConfig)
 
       fakeHttpService
         .get({
@@ -71,7 +69,7 @@ describe('adventd-test-http.service.test', () => {
     })
 
     it('error when config is is configured for fake response', async () => {
-      const fakeHttpService = new KontentJsSdkTestHttpService(
+      const fakeHttpService = new KontentTestHttpService(
         universalFakeResponseConfig
       )
 
@@ -100,7 +98,7 @@ describe('adventd-test-http.service.test', () => {
         fakeResponseJson: typesResponse
       })
 
-      const fakeHttpService = new KontentJsSdkTestHttpService(
+      const fakeHttpService = new KontentTestHttpService(
         complexFakeResponseConfig
       )
 
@@ -130,7 +128,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('post', () => {
     it('calls get method implementation', async () => {
-      const fakeHttpService = new KontentJsSdkTestHttpService(
+      const fakeHttpService = new KontentTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(fakeHttpService, 'get')
@@ -150,7 +148,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('put', () => {
     it('calls get method implementation', async () => {
-      const fakeHttpService = new KontentJsSdkTestHttpService(
+      const fakeHttpService = new KontentTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(fakeHttpService, 'get')
@@ -170,7 +168,7 @@ describe('adventd-test-http.service.test', () => {
 
   describe('delete', () => {
     it('calls get method implementation', async () => {
-      const fakeHttpService = new KontentJsSdkTestHttpService(
+      const fakeHttpService = new KontentTestHttpService(
         universalFakeResponseConfig
       )
       const getSpy = jest.spyOn(fakeHttpService, 'get')

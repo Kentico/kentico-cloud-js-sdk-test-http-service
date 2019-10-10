@@ -1,6 +1,6 @@
 import { DeliveryClient } from '@kentico/kontent-delivery'
 
-import { KontentJsSdkTestHttpService, FakeResponseConfig } from '../index'
+import { KontentTestHttpService, FakeResponseConfig } from '../index'
 
 describe('delivery client is compatible with', () => {
   it('providing the advanced test http service', async () => {
@@ -60,7 +60,7 @@ describe('delivery client is compatible with', () => {
       throwError: false
     })
 
-    const fakeHttpService = new KontentJsSdkTestHttpService(fakeResponseConfig)
+    const fakeHttpService = new KontentTestHttpService(fakeResponseConfig)
     const deliveryClientConfig = {
       projectId: 'dummyProject',
       typeResolvers: [],
