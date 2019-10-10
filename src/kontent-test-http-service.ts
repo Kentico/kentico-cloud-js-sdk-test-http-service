@@ -18,7 +18,7 @@ export type FakeResponseConfig = {
   errorJson?: any
 }
 
-export class KontentJsSdkTestHttpService implements IHttpService {
+export class KontentTestHttpService implements IHttpService {
   constructor(public config: Map<RegExp, FakeResponseConfig>) {
     Object.assign(this, config)
   }
