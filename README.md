@@ -49,7 +49,7 @@ fakeResponseConfig.set(
         next_page: null
       }
     },
-    throwCloudError: false
+    throwError: false
   });
 
 const fakeHttpService = 
