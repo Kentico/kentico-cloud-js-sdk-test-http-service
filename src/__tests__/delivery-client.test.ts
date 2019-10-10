@@ -1,6 +1,6 @@
-import { DeliveryClient } from 'kentico-cloud-delivery'
+import { DeliveryClient } from '@kentico/kontent-delivery'
 
-import { KenticoCloudJsSdkTestHttpService, FakeResponseConfig } from '../index'
+import { KontentJsSdkTestHttpService, FakeResponseConfig } from '../index'
 
 describe('delivery client is compatible with', () => {
   it('providing the advanced test http service', async () => {
@@ -38,7 +38,7 @@ describe('delivery client is compatible with', () => {
       }
     }
 
-    fakeResponseConfig.set(/https:\/\/deliver.kenticocloud.com\/.*\/items/, {
+    fakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/items/, {
       fakeResponseJson: {
         items: [fakeItem],
         pagination: {
@@ -46,10 +46,10 @@ describe('delivery client is compatible with', () => {
           next_page: null
         }
       },
-      throwCloudError: false
+      throwError: false
     })
 
-    fakeResponseConfig.set(/https:\/\/deliver.kenticocloud.com\/.*\/types/, {
+    fakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/types/, {
       fakeResponseJson: {
         types: [fakeType],
         pagination: {
@@ -57,20 +57,18 @@ describe('delivery client is compatible with', () => {
           next_page: null
         }
       },
-      throwCloudError: false
+      throwError: false
     })
 
-    const fakeHttpService = new KenticoCloudJsSdkTestHttpService(
-      fakeResponseConfig
-    )
+    const fakeHttpService = new KontentJsSdkTestHttpService(fakeResponseConfig)
     const deliveryClientConfig = {
       projectId: 'dummyProject',
       typeResolvers: [],
       httpService: fakeHttpService
     }
     const client = new DeliveryClient(deliveryClientConfig)
-    const itemsResult = await client.items().getPromise()
-    const typesResult = await client.types().getPromise()
+    const itemsResult = await client.items().toPromise()
+    const typesResult = await client.types().toPromise()
 
     expect(itemsResult.items).toHaveLength(1)
     expect(

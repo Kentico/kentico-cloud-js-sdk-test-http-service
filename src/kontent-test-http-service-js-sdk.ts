@@ -9,16 +9,16 @@ import {
   IHttpPostQueryCall,
   IHttpPutQueryCall,
   IHttpQueryOptions
-} from 'kentico-cloud-core'
+} from '@kentico/kontent-core'
 import { promises } from 'fs'
 
 export type FakeResponseConfig = {
   fakeResponseJson?: any
-  throwCloudError?: boolean
+  throwError?: boolean
   errorJson?: any
 }
 
-export class KenticoCloudJsSdkTestHttpService implements IHttpService {
+export class KontentJsSdkTestHttpService implements IHttpService {
   constructor(public config: Map<RegExp, FakeResponseConfig>) {
     Object.assign(this, config)
   }
@@ -52,7 +52,7 @@ export class KenticoCloudJsSdkTestHttpService implements IHttpService {
     }
 
     const responseConfig = match[1]
-    if (responseConfig.throwCloudError) {
+    if (responseConfig.throwError) {
       const fakeError = {
         response: {
           data: responseConfig.errorJson
