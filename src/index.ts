@@ -1,1 +1,1 @@
-export * from './kentico-cloud-js-sdk-test-http-service'
+export * from './kontent-test-http-service-js-sdk'

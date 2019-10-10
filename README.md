@@ -1,32 +1,26 @@
-# Kentico Cloud JS SDK Test HTTP Service
+# Kentico Kontent JS SDK Test HTTP Service
 
-[![npm](https://img.shields.io/npm/v/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/kentico-cloud-js-sdk-test-http-service)
-[![npm](https://img.shields.io/npm/dt/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://www.npmjs.com/package/kentico-cloud-js-sdk-test-http-service)
-[![npm](https://img.shields.io/npm/l/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](kentico-cloud-js-sdk-test-http-service)
-[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
+[![npm](https://img.shields.io/npm/v/%40kentico%2Fkontent-test-http-service-js-sdk.svg?maxAge=1000)](https://www.npmjs.com/package/%40kentico%2Fkontent-test-http-service-js-sdk)
+[![npm](https://img.shields.io/npm/dt/%40kentico%2Fkontent-test-http-service-js-sdk.svg?maxAge=1000)](https://www.npmjs.com/package/%40kentico%2Fkontent-test-http-service-js-sdk)
+[![npm](https://img.shields.io/npm/l/%40kentico%2Fkontent-test-http-service-js-sdk.svg?maxAge=1000)](%40kentico%2Fkontent-test-http-service-js-sdk)
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 
-[![Build Status](https://img.shields.io/travis/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://travis-ci.com/Kentico/kentico-cloud-js-sdk-test-http-service)
-[![dependency Status](https://img.shields.io/david/Kentico/kentico-cloud-js-sdk-test-http-service.svg?maxAge=1000)](https://david-dm.org/Kentico/kentico-cloud-js-sdk-test-http-service)
+[![Build Status](https://img.shields.io/travis/Kentico/kontent-test-http-service-js-sdk.svg?maxAge=1000)](https://travis-ci.com/Kentico/kontent-test-http-service-js-sdk)
+[![dependency Status](https://img.shields.io/david/Kentico/%40kentico%2Fkontent-test-http-service-js-sdk.svg?maxAge=1000)](https://david-dm.org/Kentico/kontent-test-http-service-js-sdk)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kentico-cloud-js-sdk-test-http-service/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kontent-test-http-service-js-sdk/maintainability)
 
 
-This is the source for the npm package called `kentico-cloud-js-sdk-test-http-service`.
+This is the source for the npm package called `@kentico/kontent-test-http-service-js-sdk`.
 
-This package is meant to be used as a fake HTTP Service when testing the [Kentico Cloud Delivery SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery). It is basically an implementation of [IHttpService](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/core/lib/http/ihttp.service.ts) that could be used when [configuring the Delivery client](https://github.com/Kentico/kentico-cloud-js/blob/master/packages/delivery/DOCS.md#client-configuration).
+This package is meant to be used as a fake HTTP Service when testing the [Kentico Kontent Delivery SDK](https://github.com/Kentico/kontent-delivery-sdk-js). It is basically an implementation of [IHttpService](https://github.com/Kentico/kontent-core-js/blob/master/lib/http/ihttp.service.ts) that could be used when [configuring the Delivery client](https://github.com/Kentico/kontent-delivery-sdk-js/blob/master/DOCS.md#client-configuration).
 
 # Install
 
 With `npm`:
 
 ```
-npm install kentico-cloud-js-sdk-test-http-service
-```
-
-Or with `yarn`
-
-```
-yarn add kentico-cloud-js-sdk-test-http-service
+npm install @kentico/kontent-test-http-service-js-sdk
 ```
 
 # Usage
@@ -78,4 +72,4 @@ Ondřej Chrastina — [@Simply007](https://twitter.com/Simply007)
 
 - Author of the [typescript module boilerplate](https://github.com/jeffijoe/ts-module-boilerplate) Jeff Hansen — [@Jeffijoe](https://twitter.com/Jeffijoe)
 
-![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kentico-cloud-js-sdk-test-http-service?pixel)
+![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-test-http-service-js-sdk?pixel)

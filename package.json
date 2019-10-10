@@ -1,5 +1,5 @@
 {
-  "name": "kentico-cloud-js-sdk-test-http-service",
+  "name": "@kentico/kontent-test-http-service-js-sdk",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kentico/kentico-cloud-js-sdk-test-http-service.git"
+    "url": "https://github.com/Kentico/kontent-test-http-service-js-sdk.git"
   },
   "files": [
     "lib",
@@ -31,9 +31,9 @@
   "author": "Ondřej Chrastina <chrastina.ondra@gmail.com> (https://github.com/Simply007)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kentico/kentico-cloud-js-sdk-test-http-service/issues"
+    "url": "https://github.com/Kentico/kontent-test-http-service-js-sdk/issues"
   },
-  "homepage": "https://github.com/Kentico/kentico-cloud-js-sdk-test-http-service#readme",
+  "homepage": "https://github.com/Kentico/kontent-test-http-service-js-sdk#readme",
   "dependencies": {
     "@kentico/kontent-core": "^2.0.0",
     "tslib": "^1.9.3"

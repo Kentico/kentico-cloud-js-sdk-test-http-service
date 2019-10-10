@@ -14,7 +14,7 @@ import { promises } from 'fs'
 
 export type FakeResponseConfig = {
   fakeResponseJson?: any
-  throwCloudError?: boolean
+  throwError?: boolean
   errorJson?: any
 }
 
@@ -52,7 +52,7 @@ export class KontentJsSdkTestHttpService implements IHttpService {
     }
 
     const responseConfig = match[1]
-    if (responseConfig.throwCloudError) {
+    if (responseConfig.throwError) {
       const fakeError = {
         response: {
           data: responseConfig.errorJson

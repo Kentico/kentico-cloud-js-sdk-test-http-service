@@ -13,7 +13,7 @@ describe('adventd-test-http.service.test', () => {
   const universalErrorConfig = new Map<RegExp, FakeResponseConfig>()
   universalErrorConfig.set(/.*/, {
     errorJson: fakeError,
-    throwCloudError: true
+    throwError: true
   })
 
   describe('constructor', () => {

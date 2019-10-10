@@ -9,3 +9,5 @@ lib
 .idea/workspace.xml
 .sublime-workspace
 .npmrc
+yarn.lock
+package-lock.json

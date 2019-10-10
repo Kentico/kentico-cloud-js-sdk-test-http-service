@@ -46,7 +46,7 @@ describe('delivery client is compatible with', () => {
           next_page: null
         }
       },
-      throwCloudError: false
+      throwError: false
     })
 
     fakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/types/, {
@@ -57,7 +57,7 @@ describe('delivery client is compatible with', () => {
           next_page: null
         }
       },
-      throwCloudError: false
+      throwError: false
     })
 
     const fakeHttpService = new KontentJsSdkTestHttpService(fakeResponseConfig)
@@ -67,8 +67,8 @@ describe('delivery client is compatible with', () => {
       httpService: fakeHttpService
     }
     const client = new DeliveryClient(deliveryClientConfig)
-    const itemsResult = await client.items().getPromise()
-    const typesResult = await client.types().getPromise()
+    const itemsResult = await client.items().toPromise()
+    const typesResult = await client.types().toPromise()
 
     expect(itemsResult.items).toHaveLength(1)
     expect(
