@@ -8,7 +8,8 @@
 [![Build Status](https://img.shields.io/travis/Kentico/kontent-test-http-service-js.svg?maxAge=1000)](https://travis-ci.com/Kentico/kontent-test-http-service-js)
 [![dependency Status](https://img.shields.io/david/Kentico/kontent-test-http-service-js.svg?maxAge=1000)](https://david-dm.org/Kentico/kontent-test-http-service-js)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kontent-test-http-service-js/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2d82fb14b450918a1778/maintainability)](https://codeclimate.com/github/Kentico/kontent-test-http-service-js/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2d82fb14b450918a1778/test_coverage)](https://codeclimate.com/github/Kentico/kontent-test-http-service-js/test_coverage)
 
 This is the source for the npm package called `@kentico/kontent-test-http-service-js`.
 
