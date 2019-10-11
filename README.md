@@ -6,7 +6,7 @@
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 
 [![Build Status](https://img.shields.io/travis/Kentico/kontent-test-http-service-js.svg?maxAge=1000)](https://travis-ci.com/Kentico/kontent-test-http-service-js)
-[![dependency Status](https://img.shields.io/david/Kentico/%40kentico%2Fkontent-test-http-service-js.svg?maxAge=1000)](https://david-dm.org/Kentico/kontent-test-http-service-js)
+[![dependency Status](https://img.shields.io/david/Kentico/kontent-test-http-service-js.svg?maxAge=1000)](https://david-dm.org/Kentico/kontent-test-http-service-js)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f22cad469cc8779c2583/maintainability)](https://codeclimate.com/github/Kentico/kontent-test-http-service-js/maintainability)
 
