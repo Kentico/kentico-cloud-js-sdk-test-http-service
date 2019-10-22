@@ -49,7 +49,12 @@ fakeResponseConfig.set(
         next_page: null
       }
     },
-    throwError: false
+    throwError: false,
+    fakeHeaders: [{
+       header: 'dummy-header-name',
+       value: 'dummy value'
+       }],
+    fakeStatus: 200
   });
 
 const fakeHttpService =

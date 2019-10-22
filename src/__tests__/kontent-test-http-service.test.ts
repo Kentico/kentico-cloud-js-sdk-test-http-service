@@ -88,14 +88,22 @@ describe('adventd-test-http.service.test', () => {
     it('correct configuration is used', async () => {
       const itemResponse = 'items response'
       const typesResponse = 'types response'
+      const dummyHeaders = [
+        { header: 'dummy-header-name', value: 'dummy value' }
+      ]
+      const dummyStatus = 200
       const complexFakeResponseConfig = new Map<RegExp, FakeResponseConfig>()
 
       complexFakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/items/, {
-        fakeResponseJson: itemResponse
+        fakeResponseJson: itemResponse,
+        fakeHeaders: dummyHeaders,
+        fakeStatus: dummyStatus
       })
 
       complexFakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/types/, {
-        fakeResponseJson: typesResponse
+        fakeResponseJson: typesResponse,
+        fakeHeaders: dummyHeaders,
+        fakeStatus: dummyStatus
       })
 
       const fakeHttpService = new KontentTestHttpService(
@@ -110,8 +118,8 @@ describe('adventd-test-http.service.test', () => {
         })
         .toPromise()
 
-      expect(typesResult).toHaveProperty('data')
-      expect(typesResult.data).toEqual(typesResponse)
+      expect(typesResult).toHaveProperty('data', typesResponse)
+      expect(typesResult).toMatchSnapshot()
 
       const itemsResult = await fakeHttpService
         .get({
@@ -121,8 +129,7 @@ describe('adventd-test-http.service.test', () => {
         })
         .toPromise()
 
-      expect(itemsResult).toHaveProperty('data')
-      expect(itemsResult.data).toEqual(itemResponse)
+      expect(itemsResult).toMatchSnapshot()
     })
   })
 
@@ -175,6 +182,26 @@ describe('adventd-test-http.service.test', () => {
 
       await fakeHttpService
         .delete({
+          url:
+            'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
+          mapError: error => error
+        })
+        .toPromise()
+
+      expect(getSpy).toHaveBeenCalled()
+    })
+  })
+
+  describe('patch', () => {
+    it('calls get method implementation', async () => {
+      const fakeHttpService = new KontentTestHttpService(
+        universalFakeResponseConfig
+      )
+      const getSpy = jest.spyOn(fakeHttpService, 'get')
+
+      await fakeHttpService
+        .patch({
+          body: '',
           url:
             'https://deliver.kontent.ai/975bf280-fd91-488c-994c-2f04416e5ee3/items',
           mapError: error => error
