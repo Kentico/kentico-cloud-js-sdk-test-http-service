@@ -4,8 +4,10 @@ import {
   IHttpService,
   IBaseResponse,
   IBaseResponseError,
+  IHeader,
   IHttpDeleteQueryCall,
   IHttpGetQueryCall,
+  IHttpPatchQueryCall,
   IHttpPostQueryCall,
   IHttpPutQueryCall,
   IHttpQueryOptions
@@ -14,6 +16,8 @@ import { promises } from 'fs'
 
 export type FakeResponseConfig = {
   fakeResponseJson?: any
+  fakeHeaders?: IHeader[]
+  fakeStatus?: number
   throwError?: boolean
   errorJson?: any
 }
@@ -67,6 +71,8 @@ export class KontentTestHttpService implements IHttpService {
     // return fake response
     return of({
       data: responseConfig.fakeResponseJson,
+      headers: responseConfig.fakeHeaders || [],
+      status: responseConfig.fakeStatus || 200,
       response: undefined
     } as IBaseResponse<TRawData>)
   }
@@ -88,6 +94,13 @@ export class KontentTestHttpService implements IHttpService {
   delete<TError extends any, TRawData extends any>(
     call: IHttpDeleteQueryCall<TError>,
     options?: IHttpQueryOptions
+  ): Observable<IBaseResponse<TRawData>> {
+    return this.get(call, options)
+  }
+
+  patch<TError extends any, TRawData extends any>(
+    call: IHttpPatchQueryCall<TError>,
+    options?: IHttpQueryOptions | undefined
   ): Observable<IBaseResponse<TRawData>> {
     return this.get(call, options)
   }

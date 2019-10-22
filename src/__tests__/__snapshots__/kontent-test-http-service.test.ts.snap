@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adventd-test-http.service.test get correct configuration is used 1`] = `
+Object {
+  "data": "types response",
+  "headers": Array [
+    Object {
+      "header": "dummy-header-name",
+      "value": "dummy value",
+    },
+  ],
+  "response": undefined,
+  "status": 200,
+}
+`;
+
+exports[`adventd-test-http.service.test get correct configuration is used 2`] = `
+Object {
+  "data": "items response",
+  "headers": Array [
+    Object {
+      "header": "dummy-header-name",
+      "value": "dummy value",
+    },
+  ],
+  "response": undefined,
+  "status": 200,
+}
+`;
