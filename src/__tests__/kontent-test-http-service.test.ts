@@ -1,5 +1,4 @@
 import { KontentTestHttpService, FakeResponseConfig } from '../index'
-import { IHeader } from '@kentico/kontent-core'
 
 describe('adventd-test-http.service.test', () => {
   const emptyConfig = new Map<RegExp, FakeResponseConfig>()
