@@ -12,7 +12,6 @@ import {
   IHttpPutQueryCall,
   IHttpQueryOptions
 } from '@kentico/kontent-core'
-import { promises } from 'fs'
 
 export type FakeResponseConfig = {
   fakeResponseJson?: any
