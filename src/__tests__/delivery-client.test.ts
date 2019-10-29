@@ -41,6 +41,7 @@ describe('delivery client is compatible with', () => {
     fakeResponseConfig.set(/https:\/\/deliver.kontent.ai\/.*\/items/, {
       fakeResponseJson: {
         items: [fakeItem],
+        modular_content: [],
         pagination: {
           continuation_token: null,
           next_page: null
