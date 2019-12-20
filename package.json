@@ -1,6 +1,6 @@
 {
   "name": "@kentico/kontent-test-http-service-js",
-  "version": "2.1.0-beta2",
+  "version": "2.1.0",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

@@ -44,9 +44,9 @@ fakeResponseConfig.set(
           elements: {...}
         }
       ],
-      modular_content: [
+      modular_content: {
         ...
-      ]
+      }
       pagination: {
         continuation_token: null,
         next_page: null
