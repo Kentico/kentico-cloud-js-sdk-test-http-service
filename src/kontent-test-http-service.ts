@@ -10,9 +10,9 @@ import {
   IHttpPatchQueryCall,
   IHttpPostQueryCall,
   IHttpPutQueryCall,
-  IHttpQueryOptions
+  IHttpQueryOptions,
+  IRetryStrategyOptions
 } from '@kentico/kontent-core'
-import { promises } from 'fs'
 
 export type FakeResponseConfig = {
   fakeResponseJson?: any
@@ -29,11 +29,7 @@ export class KontentTestHttpService implements IHttpService {
 
   retryPromise<T>(
     promise: Promise<T>,
-    _options: {
-      maxRetryAttempts: number
-      useRetryForResponseCodes: number[]
-      delay: number
-    }
+    _options: IRetryStrategyOptions
   ): Promise<T> {
     return promise
   }
