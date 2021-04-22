@@ -1,15 +1,8 @@
 # Kentico Kontent Test HTTP Service for Kontent JavaScript SDKs
 
-[![npm](https://img.shields.io/npm/v/%40kentico%2Fkontent-test-http-service-js.svg?maxAge=1000)](https://www.npmjs.com/package/%40kentico%2Fkontent-test-http-service-js)
-[![npm](https://img.shields.io/npm/dt/%40kentico%2Fkontent-test-http-service-js.svg?maxAge=1000)](https://www.npmjs.com/package/%40kentico%2Fkontent-test-http-service-js)
-[![npm](https://img.shields.io/npm/l/%40kentico%2Fkontent-test-http-service-js.svg?maxAge=1000)](%40kentico%2Fkontent-test-http-service-js)
-[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
-
-[![Build Status](https://img.shields.io/travis/Kentico/kontent-test-http-service-js.svg?maxAge=1000)](https://travis-ci.com/Kentico/kontent-test-http-service-js)
-[![dependency Status](https://img.shields.io/david/Kentico/kontent-test-http-service-js.svg?maxAge=1000)](https://david-dm.org/Kentico/kontent-test-http-service-js)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/2d82fb14b450918a1778/maintainability)](https://codeclimate.com/github/Kentico/kontent-test-http-service-js/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/2d82fb14b450918a1778/test_coverage)](https://codeclimate.com/github/Kentico/kontent-test-http-service-js/test_coverage)
+[![No Maintenance Intended](https://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+## :warning: Deprecation Notice
+> This repository is no longer being maintained for compatibility with the latest version of the product and it is deprecated. We strongly recommend using the [`TestHttpService`from `@kentico/kontent-core`](https://www.npmjs.com/package/@kentico/kontent-core).
 
 This is the source for the npm package called `@kentico/kontent-test-http-service-js`.
 
